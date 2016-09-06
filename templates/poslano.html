@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Poslana sporočila{% endblock title %}
+
+{% block specifika %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Prejeta sporočila </a>
+                <a class="navbar-brand" href="/poslano">Poslana sporočila</a>
+                <a class="navbar-brand" href="/poslji">Pošji sporočilo</a>
+                <a class="navbar-brand" href="/vreme">Vreme</a>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Seznam poslanih sporočil</h1>
+
+    <div class="poslano">
+    {% for sporocilo in seznam %}
+        <p><a href="/sporocilo/{{ sporocilo.key.id() }}">{{ sporocilo.posiljatelj }}, {{ sporocilo.zadeva }}, {{ sporocilo.nastanek }}</a></p>
+    {% endfor %}
+    </div>
+
+
+{% endblock specifika %}

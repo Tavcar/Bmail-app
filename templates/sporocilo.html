@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Sporočilo{% endblock title %}
+
+{% block specifika %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Prejeta sporočila </a>
+                <a class="navbar-brand" href="/poslano">Poslana sporočila</a>
+                <a class="navbar-brand" href="/poslji">Pošji sporočilo</a>
+                <a class="navbar-brand" href="/vreme">Vreme</a>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Sporočilo</h1>
+
+    <div class="sporocilo">
+    <p>Od: {{ sporocilo.posiljatelj }}</p>
+    <p>Zadeva: {{ sporocilo.zadeva }}</p>
+    <p>Vsebina sporočila: {{ sporocilo.vnos }}</p>
+    <p>Datum sporočila: {{ sporocilo.nastanek }}</p>
+    </div>
+
+
+{% endblock specifika %}

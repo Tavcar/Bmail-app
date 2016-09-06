@@ -1,0 +1,30 @@
+body {
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.poslji > p {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 18px;
+}
+
+.button {
+    background: #b30000;
+    padding: 8px;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+}
+
+.button:hover {
+    color: white;
+    text-decoration: none;
+}
+
+img {
+    margin-top:20px;
+}

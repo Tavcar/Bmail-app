@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Pošlji sporočilo{% endblock title %}
+
+{% block specifika %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Prejeta sporočila </a>
+                <a class="navbar-brand" href="/poslano">Poslana sporočila</a>
+                <a class="navbar-brand" href="/poslji">Pošji sporočilo</a>
+                <a class="navbar-brand" href="/vreme">Vreme</a>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Pošlji sporočilo</h1>
+    <br><br>
+    <form action="/poslji" method="post" class="poslji">
+
+        <p>Prejemnik:</p><input name="prejemnik" required>
+        <br>
+        <p>Zadeva:</p><input name="zadeva">
+        <br>
+        <p>Sporočilo:</p><textarea name="vnos"></textarea>
+        <br><br>
+        <button type="submit" class="btn btn-default">Pošlji</button>
+    </form>
+
+{% endblock specifika %}

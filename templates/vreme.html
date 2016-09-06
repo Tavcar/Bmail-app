@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Vreme{% endblock title %}
+
+{% block specifika %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Prejeta sporočila </a>
+                <a class="navbar-brand" href="/poslano">Poslana sporočila</a>
+                <a class="navbar-brand" href="/poslji">Pošji sporočilo</a>
+                <a class="navbar-brand" href="/vreme">Vreme</a>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Vreme v kraju {{ podatki.name }}</h1>
+    <br>
+    <p>Opis: {{ podatki.weather[0].description }}</p>
+
+    <p>Trenutna temperatura: {{ podatki.main.temp }} °C</p>
+
+
+{% endblock specifika %}
