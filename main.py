@@ -64,12 +64,12 @@ class PosljiHandler(BaseHandler):
         zadeva = self.request.get("zadeva")
         vnos = self.request.get("vnos")
         posiljatelj = user.email()
-        nastanek = datetime.now().strftime("%-d %b %Y ob %H:%M")
+        nastanek = datetime.now().strftime("%d-%m-%Y ob %H:%M")
 
         sporocilo = Sporocilo(prejemnik=prejemnik, zadeva=zadeva, vnos=vnos, posiljatelj=posiljatelj, nastanek=nastanek)
         sporocilo.put()
 
-        return self.render_template("poslji.html")
+        return self.redirect_to("poslano")
 
 
 class PoslanaHandler(BaseHandler):
@@ -103,7 +103,7 @@ class WeatherHandler(BaseHandler):
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler, name="prva"),
-    webapp2.Route('/poslano', PoslanaHandler),
+    webapp2.Route('/poslano', PoslanaHandler, name="poslano"),
     webapp2.Route('/sporocilo/<sporocilo_id:\d+>', SporociloHandler),
     webapp2.Route('/poslji', PosljiHandler),
     webapp2.Route('/vreme', WeatherHandler),
